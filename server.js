@@ -13,10 +13,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const URI = "mongodb://localhost/workout"
-// process.env.MONGODB_URI ||
+const URI = process.env.MONGODB_URI || "mongodb://localhost/workout"
+
 mongoose.connect(URI, {
-  // useUnifiedTopology: true,
+  useUnifiedTopology: true,
   useNewUrlParser: true,
   useFindAndModify: false
 });
